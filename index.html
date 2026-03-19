@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM JobPulse India — Daily Product Manager Jobs</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0e17;
+  --paper: #fffdf7;
+  --cream: #f5f0e8;
+  --rust: #c84b31;
+  --saffron: #e8a020;
+  --teal: #1a7a6e;
+  --muted: #7a7060;
+  --border: #ddd8cc;
+  --card: #ffffff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--paper); color:var(--ink); font-family:'IBM Plex Sans',sans-serif; }
+
+/* MASTHEAD */
+.masthead { background:var(--ink); color:var(--paper); text-align:center; padding:12px 24px; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; }
+.masthead span { color:var(--saffron); }
+
+/* HEADER */
+header { border-bottom:3px solid var(--ink); padding:0 40px; }
+.header-top { display:flex; align-items:center; justify-content:space-between; padding:24px 0 18px; border-bottom:1px solid var(--border); }
+.logo-block { text-align:center; flex:1; }
+.logo-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:0.63rem; letter-spacing:0.2em; color:var(--muted); text-transform:uppercase; margin-bottom:6px; }
+.logo-title { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(2.2rem,6vw,3.8rem); line-height:1; letter-spacing:-0.02em; }
+.logo-title .accent { color:var(--rust); }
+.logo-tagline { font-size:0.8rem; color:var(--muted); margin-top:6px; font-style:italic; font-family:'Playfair Display',serif; }
+.header-side { font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--muted); }
+.header-meta { display:flex; justify-content:space-between; align-items:center; padding:9px 0; font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--muted); }
+.cities { display:flex; gap:10px; }
+.city-pill { background:var(--ink); color:var(--paper); padding:3px 10px; border-radius:2px; font-size:0.62rem; letter-spacing:0.08em; }
+
+/* SUBSCRIBE STRIP */
+.subscribe-strip { background:var(--rust); color:white; padding:36px 40px; text-align:center; border-bottom:3px solid var(--ink); }
+.subscribe-strip h2 { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:800; margin-bottom:6px; }
+.subscribe-strip p { font-size:0.9rem; opacity:0.92; margin-bottom:24px; line-height:1.6; }
+
+/* FLOW DIAGRAM inside strip */
+.flow-strip { display:flex; align-items:center; justify-content:center; gap:0; margin-bottom:24px; flex-wrap:wrap; }
+.flow-step { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); padding:8px 14px; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; white-space:nowrap; }
+.flow-arrow { color:rgba(255,255,255,0.6); font-size:1rem; padding:0 6px; }
+
+.subscribe-btn {
+  display:inline-block; background:white; color:var(--rust);
+  padding:16px 40px; font-family:'Playfair Display',serif;
+  font-weight:800; font-size:1rem; text-decoration:none;
+  border:2px solid white; cursor:pointer;
+  transition:background 0.15s, color 0.15s;
+  letter-spacing:0.02em;
+}
+.subscribe-btn:hover { background:var(--saffron); color:white; border-color:var(--saffron); }
+
+.subscribe-meta { display:flex; justify-content:center; gap:24px; margin-top:14px; font-size:0.72rem; opacity:0.85; font-family:'IBM Plex Mono',monospace; }
+.subscribe-meta span::before { content:'✓ '; }
+
+/* WHAT HAPPENS NEXT */
+.what-next { background:var(--cream); border-bottom:2px solid var(--border); padding:28px 40px; }
+.what-next h3 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:800; margin-bottom:16px; text-align:center; }
+.steps-row { display:flex; justify-content:center; gap:0; max-width:800px; margin:0 auto; }
+.wn-step { flex:1; padding:16px 18px; border-right:1px solid var(--border); text-align:center; }
+.wn-step:last-child { border-right:none; }
+.wn-icon { font-size:1.4rem; margin-bottom:8px; }
+.wn-num { font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--rust); letter-spacing:0.1em; margin-bottom:4px; }
+.wn-title { font-family:'Playfair Display',serif; font-weight:700; font-size:0.88rem; margin-bottom:4px; }
+.wn-desc { font-size:0.78rem; color:var(--muted); line-height:1.5; }
+
+/* EMAIL ROUTING BOX */
+.routing-box { background:var(--ink); color:var(--paper); padding:20px 40px; border-bottom:2px solid var(--border); }
+.routing-box h4 { font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.15em; color:var(--saffron); text-transform:uppercase; margin-bottom:14px; text-align:center; }
+.routing-row { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; }
+.routing-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); padding:14px 18px; border-radius:3px; min-width:240px; }
+.routing-card .rc-title { font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--saffron); letter-spacing:0.1em; margin-bottom:10px; text-transform:uppercase; }
+.routing-line { font-size:0.8rem; line-height:1.8; }
+.routing-line .label { font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:#888; min-width:36px; display:inline-block; }
+.routing-line .val { color:#ccc; }
+.routing-line .bcc { color:var(--saffron); font-weight:600; }
+
+/* BODY */
+.page-body { max-width:1000px; margin:0 auto; padding:36px 24px; }
+.section-hed { display:flex; align-items:center; gap:14px; margin-bottom:22px; border-bottom:2px solid var(--ink); padding-bottom:10px; }
+.section-hed h2 { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:800; }
+.kicker { font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:white; background:var(--teal); padding:3px 10px; border-radius:2px; text-transform:uppercase; }
+.count { margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:0.67rem; color:var(--muted); }
+.orn { text-align:center; color:var(--border); letter-spacing:8px; font-size:0.8rem; margin:6px 0 28px; }
+
+/* STATS */
+.stats-bar { display:grid; grid-template-columns:repeat(4,1fr); border:2px solid var(--ink); margin-bottom:36px; }
+.stat-cell { padding:18px; text-align:center; border-right:1px solid var(--border); }
+.stat-cell:last-child { border-right:none; }
+.stat-num { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:var(--rust); display:block; }
+.stat-label { font-family:'IBM Plex Mono',monospace; font-size:0.63rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; }
+
+/* JOB CARDS */
+.city-section { margin-bottom:40px; }
+.city-label { display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--rust); margin-bottom:14px; }
+.city-label::before { content:'📍'; font-size:0.85rem; }
+.jobs-grid { display:flex; flex-direction:column; gap:10px; }
+.job-card { background:var(--card); border:1px solid var(--border); border-left:4px solid var(--ink); border-radius:0 4px 4px 0; padding:16px 18px; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:start; text-decoration:none; color:inherit; transition:border-left-color 0.15s, box-shadow 0.15s; }
+.job-card:hover { border-left-color:var(--rust); box-shadow:3px 3px 0 var(--border); }
+.job-card.featured { border-left-color:var(--saffron); background:#fffbf0; }
+.featured-badge { font-family:'IBM Plex Mono',monospace; font-size:0.6rem; background:var(--saffron); color:white; padding:2px 6px; margin-bottom:5px; display:inline-block; letter-spacing:0.08em; }
+.job-role { font-family:'Playfair Display',serif; font-weight:700; font-size:1rem; margin-bottom:3px; line-height:1.3; }
+.job-company { font-weight:600; font-size:0.85rem; color:var(--teal); margin-bottom:7px; }
+.job-tags { display:flex; flex-wrap:wrap; gap:5px; }
+.tag { font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.03em; padding:2px 7px; border-radius:2px; border:1px solid var(--border); }
+.tag.exp { color:var(--rust); border-color:var(--rust); }
+.tag.salary { color:var(--teal); border-color:var(--teal); }
+.tag.new { background:var(--saffron); color:white; border-color:var(--saffron); font-weight:600; }
+.job-right { text-align:right; flex-shrink:0; }
+.job-posted { font-family:'IBM Plex Mono',monospace; font-size:0.63rem; color:var(--muted); margin-bottom:7px; }
+.apply-btn { display:inline-block; background:var(--ink); color:white; padding:6px 12px; font-size:0.72rem; font-family:'IBM Plex Mono',monospace; text-decoration:none; letter-spacing:0.04em; transition:background 0.15s; }
+.apply-btn:hover { background:var(--rust); }
+
+/* COWORK GUIDE */
+.cowork-guide { background:var(--ink); color:var(--paper); border-radius:4px; padding:36px 40px; margin-bottom:48px; }
+.guide-hed { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:800; margin-bottom:6px; color:var(--saffron); }
+.guide-sub { font-size:0.85rem; color:#aaa; margin-bottom:28px; line-height:1.6; }
+.guide-steps { display:flex; flex-direction:column; }
+.guide-step { display:flex; gap:18px; padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.08); }
+.guide-step:last-child { border-bottom:none; padding-bottom:0; }
+.step-n { font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--saffron); width:22px; flex-shrink:0; padding-top:2px; }
+.step-body h4 { font-family:'Playfair Display',serif; font-size:0.95rem; margin-bottom:4px; }
+.step-body p { font-size:0.82rem; color:#aaa; line-height:1.6; }
+.code-snippet { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:4px; padding:14px 16px; margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:0.74rem; color:#7dffc3; line-height:1.9; }
+.code-snippet .c { color:#555; }
+.code-snippet .h { color:var(--saffron); }
+.code-snippet .w { color:white; }
+
+/* FOOTER */
+footer { background:var(--ink); color:var(--paper); text-align:center; padding:28px 24px; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.04em; }
+.f-logo { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:900; color:var(--saffron); margin-bottom:8px; }
+footer p { color:#666; margin-top:5px; line-height:1.8; }
+
+@media(max-width:640px){
+  header,.subscribe-strip,.what-next,.routing-box{padding:20px;}
+  .stats-bar{grid-template-columns:repeat(2,1fr);}
+  .job-card{grid-template-columns:1fr;}
+  .job-right{text-align:left;}
+  .steps-row{flex-direction:column;}
+  .wn-step{border-right:none;border-bottom:1px solid var(--border);}
+  .flow-strip{flex-direction:column;align-items:flex-start;gap:4px;}
+  .flow-arrow{transform:rotate(90deg);}
+  .cowork-guide{padding:22px 18px;}
+  .routing-row{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  🇮🇳 India's Daily PM Job Digest &nbsp;·&nbsp; <span>Powered by Claude Cowork</span> &nbsp;·&nbsp; Bangalore · Gurgaon · Hyderabad · Mumbai
+</div>
+
+<header>
+  <div class="header-top">
+    <div class="header-side" style="text-align:left;">EST. 2026<br>ISSUE #001</div>
+    <div class="logo-block">
+      <div class="logo-eyebrow">The Product Manager's Daily Briefing</div>
+      <div class="logo-title">PM <span class="accent">Job</span>Pulse</div>
+      <div class="logo-tagline">India's freshest Product Manager jobs, curated daily by AI</div>
+    </div>
+    <div class="header-side" style="text-align:right;">THURSDAY<br>19 MAR 2026</div>
+  </div>
+  <div class="header-meta">
+    <div class="cities">
+      <span class="city-pill">Bangalore</span>
+      <span class="city-pill">Gurgaon</span>
+      <span class="city-pill">Hyderabad</span>
+      <span class="city-pill">Mumbai</span>
+    </div>
+    <div>Sources: LinkedIn · Naukri · Company Sites</div>
+    <div>Updated: Daily 8:00 AM IST</div>
+  </div>
+</header>
+
+<!-- SUBSCRIBE STRIP -->
+<div class="subscribe-strip">
+  <h2>Get This in Your Inbox — Every Morning</h2>
+  <p>Fill the Google Form below. You'll get today's digest <strong>immediately</strong> + every morning at 8 AM IST from then on.</p>
+
+  <div class="flow-strip">
+    <div class="flow-step">📝 Fill Google Form</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">📊 Auto-added to Google Sheet</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">🤖 Claude detects new row</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">📬 Welcome + Today's Jobs sent</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">⏰ Daily at 8 AM IST forever</div>
+  </div>
+
+  <!-- Replace the href below with your actual Google Form link -->
+  <a class="subscribe-btn" href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank">
+    Subscribe Free via Google Form →
+  </a>
+  <div class="subscribe-meta">
+    <span>Free forever</span>
+    <span>Get today's jobs instantly</span>
+    <span>Daily digest at 8 AM IST</span>
+    <span>Unsubscribe anytime</span>
+  </div>
+</div>
+
+<!-- WHAT HAPPENS AFTER YOU SUBSCRIBE -->
+<div class="what-next">
+  <h3>What happens after you subscribe?</h3>
+  <div class="steps-row">
+    <div class="wn-step">
+      <div class="wn-icon">📝</div>
+      <div class="wn-num">STEP 01</div>
+      <div class="wn-title">Fill Google Form</div>
+      <div class="wn-desc">Enter your name & email. Takes 10 seconds.</div>
+    </div>
+    <div class="wn-step">
+      <div class="wn-icon">📊</div>
+      <div class="wn-num">STEP 02</div>
+      <div class="wn-title">Auto-added to Sheet</div>
+      <div class="wn-desc">Google Form instantly appends your row to the subscriber Google Sheet.</div>
+    </div>
+    <div class="wn-step">
+      <div class="wn-icon">🤖</div>
+      <div class="wn-num">STEP 03</div>
+      <div class="wn-title">Claude Detects You</div>
+      <div class="wn-desc">Claude Cowork checks the Sheet every hour for new rows not yet welcomed.</div>
+    </div>
+    <div class="wn-step">
+      <div class="wn-icon">📬</div>
+      <div class="wn-num">STEP 04</div>
+      <div class="wn-title">You Get an Email Now</div>
+      <div class="wn-desc">Welcome email + today's full job digest sent to you immediately. No waiting till tomorrow.</div>
+    </div>
+    <div class="wn-step">
+      <div class="wn-icon">⏰</div>
+      <div class="wn-num">STEP 05</div>
+      <div class="wn-title">Daily at 8 AM IST</div>
+      <div class="wn-desc">Every morning you receive fresh PM jobs automatically. Forever, until you unsubscribe.</div>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL ROUTING BOX -->
+<div class="routing-box">
+  <h4>📮 How Every Email Is Routed</h4>
+  <div class="routing-row">
+    <div class="routing-card">
+      <div class="rc-title">📬 Daily Job Digest (every morning)</div>
+      <div class="routing-line"><span class="label">TO:</span> <span class="val">each subscriber</span></div>
+      <div class="routing-line"><span class="label">CC:</span> <span class="val">sonihimanshu.ipe@gmail.com<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hellohimanshusoni@gmail.com</span></div>
+      <div class="routing-line"><span class="label">BCC:</span> <span class="bcc">ailearners@googlegroups.com</span></div>
+    </div>
+    <div class="routing-card">
+      <div class="rc-title">🎉 Welcome Email (on subscribe)</div>
+      <div class="routing-line"><span class="label">TO:</span> <span class="val">new subscriber</span></div>
+      <div class="routing-line"><span class="label">CC:</span> <span class="val">hellohimanshusoni@gmail.com</span></div>
+      <div class="routing-line"><span class="label">BCC:</span> <span class="bcc">ailearners@googlegroups.com</span></div>
+      <div class="routing-line" style="margin-top:6px;font-size:0.72rem;color:#7dffc3;">+ Today's digest sent immediately</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-cell"><span class="stat-num">127</span><span class="stat-label">PM Jobs This Week</span></div>
+    <div class="stat-cell"><span class="stat-num">4</span><span class="stat-label">Cities Covered</span></div>
+    <div class="stat-cell"><span class="stat-num">Daily</span><span class="stat-label">Update Cadence</span></div>
+    <div class="stat-cell"><span class="stat-num">₹15–80L</span><span class="stat-label">Salary Range</span></div>
+  </div>
+
+  <div class="section-hed">
+    <span class="kicker">Today's Picks</span>
+    <h2>Product Manager Jobs — Last 7 Days</h2>
+    <span class="count">LinkedIn · Naukri · Company Sites</span>
+  </div>
+  <div class="orn">— ✦ —</div>
+
+  <!-- BANGALORE -->
+  <div class="city-section">
+    <div class="city-label">Bangalore</div>
+    <div class="jobs-grid">
+      <a class="job-card featured" href="https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4662655005" target="_blank">
+        <div class="job-main">
+          <div class="featured-badge">⭐ FEATURED</div>
+          <div class="job-role">Product Manager II — SME Payments (AI-first)</div>
+          <div class="job-company">Razorpay · Bangalore</div>
+          <div class="job-tags"><span class="tag new">NEW</span><span class="tag exp">3–6 yrs</span><span class="tag salary">₹30–55L</span><span class="tag">Fintech</span><span class="tag">UPI</span><span class="tag">AI-first</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">2 days ago · Company Site</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://www.google.com/about/careers/applications/jobs/results?q=product+manager&location=Bengaluru" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Product Manager, Payments (L5)</div>
+          <div class="job-company">Google India · Bangalore</div>
+          <div class="job-tags"><span class="tag exp">5+ yrs</span><span class="tag salary">₹60–90L</span><span class="tag">Payments</span><span class="tag">GCP</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">3 days ago · Google Careers</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://in.linkedin.com/jobs/flipkart-product-manager-jobs" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Senior Product Manager — Growth</div>
+          <div class="job-company">Flipkart · Bangalore</div>
+          <div class="job-tags"><span class="tag new">NEW</span><span class="tag exp">4–8 yrs</span><span class="tag salary">₹40–65L</span><span class="tag">E-commerce</span><span class="tag">Growth</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">2 days ago · LinkedIn</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://careers.swiggy.com/" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Group Product Manager — Instamart</div>
+          <div class="job-company">Swiggy · Bangalore</div>
+          <div class="job-tags"><span class="tag exp">6–10 yrs</span><span class="tag salary">₹50–80L</span><span class="tag">Quick Commerce</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">5 days ago · Company Site</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://www.naukri.com/product-manager-jobs-in-bangalore" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Product Manager — Lending Platform</div>
+          <div class="job-company">CRED · Bangalore</div>
+          <div class="job-tags"><span class="tag new">NEW</span><span class="tag exp">3–6 yrs</span><span class="tag salary">₹35–60L</span><span class="tag">Fintech</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">1 day ago · Naukri</div><div class="apply-btn">Apply →</div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- GURGAON -->
+  <div class="city-section">
+    <div class="city-label">Gurgaon</div>
+    <div class="jobs-grid">
+      <a class="job-card featured" href="https://www.naukri.com/product-manager-jobs-in-gurgaon" target="_blank">
+        <div class="job-main">
+          <div class="featured-badge">⭐ FEATURED</div>
+          <div class="job-role">Senior Product Manager — Digital Banking</div>
+          <div class="job-company">PhonePe · Gurgaon</div>
+          <div class="job-tags"><span class="tag new">NEW</span><span class="tag exp">4–8 yrs</span><span class="tag salary">₹45–70L</span><span class="tag">UPI</span><span class="tag">Payments</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">2 days ago · Naukri</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://in.linkedin.com/jobs" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Product Manager — AI Platform</div>
+          <div class="job-company">Microsoft India · Gurgaon</div>
+          <div class="job-tags"><span class="tag exp">5+ yrs</span><span class="tag salary">₹55–85L</span><span class="tag">Azure</span><span class="tag">GenAI</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">4 days ago · LinkedIn</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://www.naukri.com/product-manager-jobs-in-gurgaon" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Associate Product Manager — Travel</div>
+          <div class="job-company">MakeMyTrip · Gurgaon</div>
+          <div class="job-tags"><span class="tag exp">1–3 yrs</span><span class="tag salary">₹18–30L</span><span class="tag">Travel</span><span class="tag">Mobile</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">6 days ago · Naukri</div><div class="apply-btn">Apply →</div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- HYDERABAD -->
+  <div class="city-section">
+    <div class="city-label">Hyderabad</div>
+    <div class="jobs-grid">
+      <a class="job-card featured" href="https://www.google.com/about/careers/applications/jobs/results?q=product+manager&location=Hyderabad" target="_blank">
+        <div class="job-main">
+          <div class="featured-badge">⭐ FEATURED</div>
+          <div class="job-role">Senior Product Manager, Cloud Infrastructure</div>
+          <div class="job-company">Google India · Hyderabad</div>
+          <div class="job-tags"><span class="tag exp">8+ yrs</span><span class="tag salary">₹65–95L</span><span class="tag">GCP</span><span class="tag">Enterprise</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">3 days ago · Google Careers</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://www.naukri.com/product-manager-jobs-in-hyderabad" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Product Manager — Real Estate Tech</div>
+          <div class="job-company">RealPage Inc. · Hyderabad</div>
+          <div class="job-tags"><span class="tag exp">4–7 yrs</span><span class="tag salary">₹30–50L</span><span class="tag">PropTech</span><span class="tag">SaaS</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">5 days ago · Glassdoor</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://in.linkedin.com/jobs" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Product Manager II — Data Science</div>
+          <div class="job-company">MSCI India · Hyderabad</div>
+          <div class="job-tags"><span class="tag new">NEW</span><span class="tag exp">3–6 yrs</span><span class="tag salary">₹28–48L</span><span class="tag">FinData</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">2 days ago · Glassdoor</div><div class="apply-btn">Apply →</div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MUMBAI -->
+  <div class="city-section">
+    <div class="city-label">Mumbai</div>
+    <div class="jobs-grid">
+      <a class="job-card featured" href="https://www.michaelpage.co.in/jobs/product-manager" target="_blank">
+        <div class="job-main">
+          <div class="featured-badge">⭐ FEATURED</div>
+          <div class="job-role">Data Science PM — FMCG (GenAI · LLMs)</div>
+          <div class="job-company">Confidential MNC · Mumbai (via Michael Page)</div>
+          <div class="job-tags"><span class="tag new">NEW</span><span class="tag exp">5–8 yrs</span><span class="tag salary">₹40–65L</span><span class="tag">GenAI</span><span class="tag">MLOps</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">This week · Michael Page</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://www.naukri.com/product-manager-jobs-in-mumbai" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Product Manager — Consumer Lending</div>
+          <div class="job-company">Bajaj Finserv · Mumbai</div>
+          <div class="job-tags"><span class="tag new">NEW</span><span class="tag exp">3–6 yrs</span><span class="tag salary">₹25–45L</span><span class="tag">Fintech</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">1 day ago · Naukri</div><div class="apply-btn">Apply →</div></div>
+      </a>
+      <a class="job-card" href="https://in.linkedin.com/jobs" target="_blank">
+        <div class="job-main">
+          <div class="job-role">Senior PM — Telecom Products (5G)</div>
+          <div class="job-company">Reliance Jio · Mumbai</div>
+          <div class="job-tags"><span class="tag exp">5–8 yrs</span><span class="tag salary">₹35–55L</span><span class="tag">Telecom</span><span class="tag">5G</span></div>
+        </div>
+        <div class="job-right"><div class="job-posted">3 days ago · LinkedIn</div><div class="apply-btn">Apply →</div></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="orn">— ✦ —</div>
+
+  <!-- CLAUDE COWORK SETUP GUIDE -->
+  <div class="cowork-guide">
+    <div class="guide-hed">Complete Claude Cowork Setup</div>
+    <div class="guide-sub">One-time setup. Then Claude does everything automatically — detecting new subscribers, sending welcome emails with today's digest, and running the daily job scan every morning.</div>
+
+    <div class="guide-steps">
+
+      <div class="guide-step">
+        <div class="step-n">01</div>
+        <div class="step-body">
+          <h4>Create a Google Form with 2 fields</h4>
+          <p>Go to forms.google.com → New Form → Add: <strong>Full Name</strong> (Short answer) + <strong>Email Address</strong> (Short answer, set validation to email). Link responses to a Google Sheet. Copy the Form link and replace the subscribe button URL above.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-n">02</div>
+        <div class="step-body">
+          <h4>Connect Gmail in Claude Desktop</h4>
+          <p>Open Claude Desktop → Cowork tab → "+" → Connectors → Gmail → Authorize. This allows Claude to send emails on your behalf. Already connected ✅ (Gmail is in your connected apps).</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-n">03</div>
+        <div class="step-body">
+          <h4>Connect Google Drive (to read the Sheet)</h4>
+          <p>In Cowork → "+" → Connectors → Google Drive → Authorize. This lets Claude read the Google Sheet where Form responses land. Share the Sheet with Claude or place it in an accessible Drive folder.</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-n">04</div>
+        <div class="step-body">
+          <h4>Create the Scheduled Task — type /schedule in Cowork</h4>
+          <div class="code-snippet">
+<span class="c"># PM JobPulse — runs daily at 8:00 AM IST</span>
+
+<span class="h">TASK A — NEW SUBSCRIBER DETECTION (run first, every cycle):</span>
+<span class="w">1. Read Google Sheet "PM JobPulse Subscribers" from Google Drive
+2. Read /welcomed.csv (list of already-welcomed emails)
+3. For each row in Sheet NOT in welcomed.csv:
+   a. Send WELCOME EMAIL immediately via Gmail:
+        TO: new subscriber email
+        CC: hellohimanshusoni@gmail.com
+        BCC: ailearners@googlegroups.com
+        Subject: "Welcome to PM JobPulse 🎉 Your jobs are here!"
+        Body: "Hi [Name], you're subscribed! Here are today's
+               freshest PM jobs across Bangalore, Gurgaon,
+               Hyderabad & Mumbai — enjoy! [attach today's digest]"
+   b. ALSO send today's full job digest to them immediately
+        (same as Task B below — don't make them wait till tomorrow)
+   c. Append their email to /welcomed.csv
+        so they don't get welcomed twice</span>
+
+<span class="h">TASK B — DAILY JOB DIGEST (send to all subscribers):</span>
+<span class="w">1. Search LinkedIn, Naukri & company career pages for
+   "Product Manager" jobs posted in last 24 hours in:
+   Bangalore, Gurgaon, Hyderabad, Mumbai
+2. Select top 10-15 roles, remove duplicates
+3. Read ALL emails from Google Sheet
+4. For EACH subscriber send formatted email:
+        TO: subscriber email
+        CC: sonihimanshu.ipe@gmail.com,
+            hellohimanshusoni@gmail.com
+        BCC: ailearners@googlegroups.com
+        Subject: "PM JobPulse 🇮🇳 [DATE] | Top PM Jobs Today"
+5. Log count + timestamp to /email-log.csv</span>
+
+<span class="c"># Schedule: Daily at 08:00 AM IST</span>
+<span class="c"># Note: Run Task A before Task B so new subscribers</span>
+<span class="c"># get today's digest in their welcome email too</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-n">05</div>
+        <div class="step-body">
+          <h4>Host this landing page & share the link</h4>
+          <p>Upload this HTML file to <strong>GitHub Pages</strong> (free) or <strong>Netlify</strong> (free drag-and-drop). Share the URL anywhere — LinkedIn, WhatsApp, Twitter. Anyone who subscribes via the Google Form automatically enters the full pipeline.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="f-logo">PM JobPulse</div>
+  India's Daily Product Manager Job Digest — Powered by Claude Cowork
+  <p>Admin: sonihimanshu.ipe@gmail.com · hellohimanshusoni@gmail.com</p>
+  <p>BCC on every email: ailearners@googlegroups.com</p>
+  <p style="margin-top:8px;">© 2026 PM JobPulse · Jobs from LinkedIn, Naukri & Company Websites · Unsubscribe anytime</p>
+</footer>
+
+</body>
+</html>
